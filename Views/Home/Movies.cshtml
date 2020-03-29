@@ -1,0 +1,14 @@
+﻿@model Vidly.ViewModels.MovieCustomerViewModel
+@{
+    ViewBag.Title = "Movies";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<ul>
+    @foreach (var movie in Model.movies)
+    {
+
+    <li>Movie: @movie.name </li>
+    }
+</ul>

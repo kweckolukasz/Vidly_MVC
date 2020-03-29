@@ -1,0 +1,38 @@
+﻿@model Vidly.ViewModels.MovieCustomerViewModel
+@{
+    ViewBag.Title = "Customers";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@if (Model.customers.Any())
+{
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var customer in Model.customers)
+            {
+                <tr>
+                    <th scope="row">@customer.id</th>
+                    <td>@Html.ActionLink(customer.name, "CustomerDetail", "Home", new { id = customer.id }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <h1>We don't have customers yet.</h1>
+}
+
+
+
+
