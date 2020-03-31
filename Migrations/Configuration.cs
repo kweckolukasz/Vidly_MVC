@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Vidly.App_Start.MyDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Vidly.App_Start.ApplicationContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Vidly.App_Start.MyDbContext context)
+        protected override void Seed(Vidly.App_Start.ApplicationContext context)
         {
             //  This method will be called after migrating to the latest version.
 
