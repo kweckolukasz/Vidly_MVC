@@ -8,6 +8,24 @@
         public override void Up()
         {
             CreateTable(
+                "dbo.Customers",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        name = c.String(),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
+                "dbo.Movies",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        name = c.String(),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -94,6 +112,8 @@
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Movies");
+            DropTable("dbo.Customers");
         }
     }
 }
