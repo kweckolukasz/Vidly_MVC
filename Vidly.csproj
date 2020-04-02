@@ -200,6 +200,10 @@
     <Compile Include="Migrations\202004021119277_CustomerClassRehabilitate.designer.cs">
       <DependentUpon>202004021119277_CustomerClassRehabilitate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004021310488_addNameForMembershipType.cs" />
+    <Compile Include="Migrations\202004021310488_addNameForMembershipType.designer.cs">
+      <DependentUpon>202004021310488_addNameForMembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004021119277_CustomerClassRehabilitate.resx">
       <DependentUpon>202004021119277_CustomerClassRehabilitate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004021310488_addNameForMembershipType.resx">
+      <DependentUpon>202004021310488_addNameForMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
