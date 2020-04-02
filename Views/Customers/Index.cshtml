@@ -20,8 +20,8 @@
             @foreach (var customer in Model)
             {
                 <tr>
-                    <th scope="row">@customer.id</th>
-                    <td>@Html.ActionLink(customer.name, "CustomerDetail", "Customers", new { id = customer.id }, null)</td>
+                    <th scope="row">@customer.Id</th>
+                    <td>@Html.ActionLink(customer.name, "CustomerDetail", "Customers", new { id = customer.Id }, null)</td>
                 </tr>
             }
         </tbody>

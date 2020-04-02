@@ -8,11 +8,11 @@ namespace Vidly.Models
 {
     public class Customer
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         [Required]
         [StringLength(255)]
         public string name { get; set; }
-        private bool IsSubscribedToNewsLetter { get; set; }
+        public bool IsSubscribedToNewsLetter { get; set; }
         public MembershipType membershipType { get; set; }
         public byte membershipTypeId { get; set; }
 
@@ -23,7 +23,7 @@ namespace Vidly.Models
         public Customer(string name, int id)
         {
             this.name = name;
-            this.id = id;
+            this.Id = id;
         }
     }
 }

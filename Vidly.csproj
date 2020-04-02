@@ -196,6 +196,10 @@
     <Compile Include="Migrations\202004020839134_ApplyAnnotationsToCustomerName.designer.cs">
       <DependentUpon>202004020839134_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004021119277_CustomerClassRehabilitate.cs" />
+    <Compile Include="Migrations\202004021119277_CustomerClassRehabilitate.designer.cs">
+      <DependentUpon>202004021119277_CustomerClassRehabilitate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004020839134_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>202004020839134_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004021119277_CustomerClassRehabilitate.resx">
+      <DependentUpon>202004021119277_CustomerClassRehabilitate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
