@@ -1,11 +1,11 @@
-﻿@model Vidly.ViewModels.MovieCustomerViewModel
+﻿@model IEnumerable<Vidly.Models.Customer>
 @{
     ViewBag.Title = "Customers";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-@if (Model.customers.Any())
+@if (Model.Any())
 {
    
     <table class="table">
@@ -17,11 +17,11 @@
         </thead>
         <tbody>
 
-            @foreach (var customer in Model.customers)
+            @foreach (var customer in Model)
             {
                 <tr>
                     <th scope="row">@customer.id</th>
-                    <td>@Html.ActionLink(customer.name, "CustomerDetail", "Home", new { id = customer.id }, null)</td>
+                    <td>@Html.ActionLink(customer.name, "CustomerDetail", "Customers", new { id = customer.id }, null)</td>
                 </tr>
             }
         </tbody>

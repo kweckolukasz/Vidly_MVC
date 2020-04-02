@@ -11,7 +11,6 @@ namespace Vidly.Controllers
     public class HomeController : Controller
     {
 
-        MovieCustomerViewModel viewModel = new MovieCustomerViewModel();
 
         public ActionResult Index()
         {
@@ -21,24 +20,8 @@ namespace Vidly.Controllers
         public ActionResult Movies()
         {
             ViewBag.Message = "List of movies.";
-            return View(viewModel);
+            return View();
         }
 
-        public ActionResult Customers()
-        {
-            ViewBag.Message = "list of Customers.";
-            return View(viewModel);
-        }
-
-        
-        public ActionResult CustomerDetail(int id)
-        {
-            if (id>viewModel.customers.Count-1)
-            {
-                return HttpNotFound();
-            }
-            Customer customer = viewModel.customers[id];
-            return View(customer);
-        }
     }
 }
