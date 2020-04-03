@@ -9,14 +9,14 @@ namespace Vidly.Models
     {
         public int id { get; set; }
         public string name { get; set; }
+        public string genre { get; set; }
+        public DateTime releaseDate { get; set; }
+        public DateTime dateAdded { get; set; }
+        public int numberInStock { get; set; }
 
         public Movie()
         {
-        }
-
-        public Movie(string name)
-        {
-            this.name = name;
+            dateAdded = DateTime.Now;
         }
 
     }

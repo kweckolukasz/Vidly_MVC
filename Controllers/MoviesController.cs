@@ -10,42 +10,23 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies/Random
-        public ActionResult Random()
+        ApplicationDbContext _context;
+
+        public MoviesController()
         {
-            var viewModel = new MovieCustomerViewModel();
-            return View(viewModel);
+            _context = new ApplicationDbContext();
         }
 
-        // GET: Movies/Edit
-        public ActionResult Edit(int id)
+        protected override void Dispose(bool disposing)
         {
-            return View("id: "+id);
+            _context.Dispose();
         }
 
-        // GET: Movies
-        //public ActionResult Index(int? pageIndex, string sortBy)
-        //{
-        //    if (!pageIndex.HasValue)
-        //    {
-        //        pageIndex = 1;
-        //    }
-        //    if (String.IsNullOrWhiteSpace(sortBy))
-        //    {
-        //        sortBy = "name";
-        //    }
-
-        //    return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
-        //}
         public ActionResult Index()
         {
-            return View();
+            var movies = _context.Movies.ToList();
+            return View(movies);
         }
 
-        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year, int month)
-        {
-            return Content(year + "/" + month);
-        }
     }
 }

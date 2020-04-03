@@ -216,6 +216,14 @@
     <Compile Include="Migrations\202004021731566_populate_birthdays.designer.cs">
       <DependentUpon>202004021731566_populate_birthdays.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004021819377_new properties in Movies.cs" />
+    <Compile Include="Migrations\202004021819377_new properties in Movies.designer.cs">
+      <DependentUpon>202004021819377_new properties in Movies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004021824069_populate_movies.cs" />
+    <Compile Include="Migrations\202004021824069_populate_movies.designer.cs">
+      <DependentUpon>202004021824069_populate_movies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -334,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004021731566_populate_birthdays.resx">
       <DependentUpon>202004021731566_populate_birthdays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004021819377_new properties in Movies.resx">
+      <DependentUpon>202004021819377_new properties in Movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004021824069_populate_movies.resx">
+      <DependentUpon>202004021824069_populate_movies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

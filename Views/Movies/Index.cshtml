@@ -1,8 +1,37 @@
-﻿
+﻿@model IEnumerable<Vidly.Models.Movie>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+
+    @{var movies = Model.ToList(); }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>release date</th>
+                <th>date added</th>
+                <th>number in stock</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var movie in movies)
+            {
+                <tr>
+                    <th scope="row">@movie.id</th>
+                    <td>@movie.name</td>
+                    <td>@movie.genre</td>
+                    <td>@movie.releaseDate</td>
+                    <td>@movie.dateAdded</td>
+                    <td>@movie.numberInStock</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+
 
