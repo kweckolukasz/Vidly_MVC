@@ -224,6 +224,30 @@
     <Compile Include="Migrations\202004021824069_populate_movies.designer.cs">
       <DependentUpon>202004021824069_populate_movies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004030958522_change_dates_on_movies_in_DB.cs" />
+    <Compile Include="Migrations\202004030958522_change_dates_on_movies_in_DB.designer.cs">
+      <DependentUpon>202004030958522_change_dates_on_movies_in_DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004031009294_addMoviesAgain.cs" />
+    <Compile Include="Migrations\202004031009294_addMoviesAgain.designer.cs">
+      <DependentUpon>202004031009294_addMoviesAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004031032150_feedMoviesAgain.cs" />
+    <Compile Include="Migrations\202004031032150_feedMoviesAgain.designer.cs">
+      <DependentUpon>202004031032150_feedMoviesAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004031103027_pendingChanges.cs" />
+    <Compile Include="Migrations\202004031103027_pendingChanges.designer.cs">
+      <DependentUpon>202004031103027_pendingChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004031105569_rate.cs" />
+    <Compile Include="Migrations\202004031105569_rate.designer.cs">
+      <DependentUpon>202004031105569_rate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004040615573_DeleteRateFromMovies.cs" />
+    <Compile Include="Migrations\202004040615573_DeleteRateFromMovies.designer.cs">
+      <DependentUpon>202004040615573_DeleteRateFromMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -234,6 +258,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\MovieCustomerViewModel.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
@@ -295,6 +320,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Customers\newCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,6 +374,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004021824069_populate_movies.resx">
       <DependentUpon>202004021824069_populate_movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004030958522_change_dates_on_movies_in_DB.resx">
+      <DependentUpon>202004030958522_change_dates_on_movies_in_DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004031009294_addMoviesAgain.resx">
+      <DependentUpon>202004031009294_addMoviesAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004031032150_feedMoviesAgain.resx">
+      <DependentUpon>202004031032150_feedMoviesAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004031103027_pendingChanges.resx">
+      <DependentUpon>202004031103027_pendingChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004031105569_rate.resx">
+      <DependentUpon>202004031105569_rate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004040615573_DeleteRateFromMovies.resx">
+      <DependentUpon>202004040615573_DeleteRateFromMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

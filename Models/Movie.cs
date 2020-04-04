@@ -13,12 +13,5 @@ namespace Vidly.Models
         public DateTime releaseDate { get; set; }
         public DateTime dateAdded { get; set; }
         public int numberInStock { get; set; }
-
-        public Movie()
-        {
-            dateAdded = DateTime.Now;
-        }
-
     }
-
 }
