@@ -248,6 +248,14 @@
     <Compile Include="Migrations\202004040615573_DeleteRateFromMovies.designer.cs">
       <DependentUpon>202004040615573_DeleteRateFromMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004061141355_changeDatesInMovies.cs" />
+    <Compile Include="Migrations\202004061141355_changeDatesInMovies.designer.cs">
+      <DependentUpon>202004061141355_changeDatesInMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004061145168_changeDatesInMovies1.cs" />
+    <Compile Include="Migrations\202004061145168_changeDatesInMovies1.designer.cs">
+      <DependentUpon>202004061145168_changeDatesInMovies1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -392,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004040615573_DeleteRateFromMovies.resx">
       <DependentUpon>202004040615573_DeleteRateFromMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061141355_changeDatesInMovies.resx">
+      <DependentUpon>202004061141355_changeDatesInMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061145168_changeDatesInMovies1.resx">
+      <DependentUpon>202004061145168_changeDatesInMovies1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
