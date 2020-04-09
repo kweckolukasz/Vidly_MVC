@@ -9,18 +9,18 @@ namespace Vidly.Models
 {
     public class Movie
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         [Display(Name = "Title")]
-        public string name { get; set; }
-        [Display(Name = "Genre")]
-        public string genre { get; set; }
+        public string Name { get; set; }
+        public Genre Genre { get; set; }
+        public int GenreId { get; set; }
         [Display(Name = "Release Date")]
         [Column(TypeName = "DateTime2")]
-        public DateTime releaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         [Display(Name = "Date added")]
         [Column(TypeName = "DateTime2")]
-        public DateTime dateAdded { get; set; }
+        public DateTime DateAdded { get; set; }
         [Display(Name = "Stock no.")]
-        public int numberInStock { get; set; }
+        public int NumberInStock { get; set; }
     }
 }

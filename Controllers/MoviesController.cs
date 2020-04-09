@@ -36,7 +36,7 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            Movie movie = _context.Movies.First(m =>id == m.id);
+            Movie movie = _context.Movies.First(m =>id == m.Id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -45,10 +45,16 @@ namespace Vidly.Controllers
         }
         public ActionResult Save(Movie movie)
         {
-            movie.dateAdded = DateTime.Now;
-            movie.numberInStock = movie.id;
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+            
 
-            if (movie.id == 0)
+            movie.DateAdded = DateTime.Now;
+            movie.NumberInStock = movie.Id;
+
+            if (movie.Id == 0)
             {
                 _context.Movies.Add(movie);
                 
@@ -57,18 +63,19 @@ namespace Vidly.Controllers
             }
             else
             {
-                Movie movieDB = _context.Movies.Find(movie.id);
+                Movie movieDB = _context.Movies.Find(movie.Id);
                 if (movieDB == null)
                 {
                     return HttpNotFound();
                 }
                 if (ModelState.IsValid)
                 {
-                    movieDB.name = movie.name;
-                    movieDB.genre = movie.genre;
-                    movieDB.dateAdded = movie.dateAdded;
-                    movieDB.releaseDate = movie.releaseDate;
-                    movieDB.numberInStock = movie.numberInStock;
+                    movieDB.Name = movie.Name;
+                    //movieDB.Genre = movie.Genre;
+                    //movieDB.GenreId = movie.GenreId;
+                    movieDB.DateAdded = movie.DateAdded;
+                    movieDB.ReleaseDate = movie.ReleaseDate;
+                    movieDB.NumberInStock = movie.NumberInStock;
                     _context.SaveChanges();
                 }
 

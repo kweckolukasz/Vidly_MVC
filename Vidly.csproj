@@ -255,9 +255,18 @@
     <Compile Include="Migrations\202004090800549_dateTime_fields_in_Movies_change_To_dateTime2.designer.cs">
       <DependentUpon>202004090800549_dateTime_fields_in_Movies_change_To_dateTime2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004091122141_delete_old_genre.cs" />
+    <Compile Include="Migrations\202004091122141_delete_old_genre.designer.cs">
+      <DependentUpon>202004091122141_delete_old_genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004091124161_add_new_genre.cs" />
+    <Compile Include="Migrations\202004091124161_add_new_genre.designer.cs">
+      <DependentUpon>202004091124161_add_new_genre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -403,6 +412,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004090800549_dateTime_fields_in_Movies_change_To_dateTime2.resx">
       <DependentUpon>202004090800549_dateTime_fields_in_Movies_change_To_dateTime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091122141_delete_old_genre.resx">
+      <DependentUpon>202004091122141_delete_old_genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091124161_add_new_genre.resx">
+      <DependentUpon>202004091124161_add_new_genre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

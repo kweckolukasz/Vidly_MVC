@@ -26,11 +26,11 @@
                
                 <tr>
                     <th scope="row">@i</th>
-                    <td>@Html.ActionLink(movie.name, "Edit", "Movies",new { id = movie.id }, null)</td>
-                    <td>@movie.genre</td>
-                    <td>@movie.releaseDate.ToString("dd/MM/yyyy")</td>
-                    <td>@movie.dateAdded.ToString("dd/MM/yyyy")</td>
-                    <td>@movie.numberInStock</td>
+                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies",new { id = movie.id }, null)</td>
+                    @*<td>@movie.genre</td>*@
+                    <td>@movie.ReleaseDate.ToString("dd/MM/yyyy")</td>
+                    <td>@movie.DateAdded.ToString("dd/MM/yyyy")</td>
+                    <td>@movie.NumberInStock</td>
                 </tr>
                 i++;
             }
