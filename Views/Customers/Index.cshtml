@@ -22,7 +22,7 @@
             {
                 <tr>
                     <th scope="row">@customer.Id</th>
-                    <td>@Html.ActionLink(customer.name, "CustomerDetail", "Customers", new { id = customer.Id }, null)</td>
+                    <td>@Html.ActionLink(customer.name, "EditCustomer", "Customers", new { id = customer.Id }, null)</td>
                     <td>@customer.membershipType.DiscountRate%</td>
                 </tr>
             }
