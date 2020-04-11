@@ -26,8 +26,8 @@
                
                 <tr>
                     <th scope="row">@i</th>
-                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies",new { id = movie.id }, null)</td>
-                    @*<td>@movie.genre</td>*@
+                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies",new { id = movie.Id }, null)</td>
+                    <td>@movie.Genre.Name</td>
                     <td>@movie.ReleaseDate.ToString("dd/MM/yyyy")</td>
                     <td>@movie.DateAdded.ToString("dd/MM/yyyy")</td>
                     <td>@movie.NumberInStock</td>

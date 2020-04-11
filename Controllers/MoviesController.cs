@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 using System.Data.SqlClient;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -25,23 +26,39 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies
+                .Include(m => m.Genre)
+                .ToList();
             return View(movies);
         }
 
         public ActionResult Add()
         {
-            return View("Form");
+            FormMovieViewModel viewModel = new FormMovieViewModel
+            {
+                Genres = _context.Genres.ToList()
+            };
+            return View("Form", viewModel);
         }
 
         public ActionResult Edit(int id)
         {
-            Movie movie = _context.Movies.First(m =>id == m.Id);
+            Movie movie = _context.Movies
+                .Include(m => m.Genre)
+                .First(m => id == m.Id);
+
             if (movie == null)
             {
                 return HttpNotFound();
             }
-            return View("Form", movie);
+
+            FormMovieViewModel viewModel = new FormMovieViewModel
+            {
+                Genres = _context.Genres.ToList(),
+                Movie = movie
+            };
+
+            return View("Form", viewModel);
         }
         public ActionResult Save(Movie movie)
         {
@@ -49,7 +66,7 @@ namespace Vidly.Controllers
             {
                 return HttpNotFound();
             }
-            
+
 
             movie.DateAdded = DateTime.Now;
             movie.NumberInStock = movie.Id;
@@ -71,8 +88,8 @@ namespace Vidly.Controllers
                 if (ModelState.IsValid)
                 {
                     movieDB.Name = movie.Name;
-                    //movieDB.Genre = movie.Genre;
-                    //movieDB.GenreId = movie.GenreId;
+                    movieDB.Genre = movie.Genre;
+                    movieDB.GenreId = movie.GenreId;
                     movieDB.DateAdded = movie.DateAdded;
                     movieDB.ReleaseDate = movie.ReleaseDate;
                     movieDB.NumberInStock = movie.NumberInStock;

@@ -77,7 +77,7 @@ namespace Vidly.Controllers
                 CustomerInDB.membershipTypeId = customer.membershipTypeId;
                 CustomerInDB.dateOfBirth = customer.dateOfBirth;
 
-                TryUpdateModel(CustomerInDB);
+                //TryUpdateModel(CustomerInDB);
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");

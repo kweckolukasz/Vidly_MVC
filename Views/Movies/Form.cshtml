@@ -10,10 +10,11 @@
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
     </div>
-    @*<div class="form-group">
-        @Html.LabelFor(m => m.genre)
-        @Html.TextBoxFor(m => m.genre, new { @class = "form-control" })
-    </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre)
+        @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.GenreId, new SelectList(Model.Genre, ))
+    </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ReleaseDate)
         @Html.TextBoxFor(m => m.ReleaseDate, "{0:yyyy-MM-dd}" ,new { @class = "form-control", @type = "Date" })

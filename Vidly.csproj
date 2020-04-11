@@ -259,9 +259,21 @@
     <Compile Include="Migrations\202004091122141_delete_old_genre.designer.cs">
       <DependentUpon>202004091122141_delete_old_genre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004091124161_add_new_genre.cs" />
-    <Compile Include="Migrations\202004091124161_add_new_genre.designer.cs">
-      <DependentUpon>202004091124161_add_new_genre.cs</DependentUpon>
+    <Compile Include="Migrations\202004091201064_addGenre.cs" />
+    <Compile Include="Migrations\202004091201064_addGenre.designer.cs">
+      <DependentUpon>202004091201064_addGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004091204043_addGenre1.cs" />
+    <Compile Include="Migrations\202004091204043_addGenre1.designer.cs">
+      <DependentUpon>202004091204043_addGenre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004091244486_feedGenre.cs" />
+    <Compile Include="Migrations\202004091244486_feedGenre.designer.cs">
+      <DependentUpon>202004091244486_feedGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004091257371_addGenresToMovies.cs" />
+    <Compile Include="Migrations\202004091257371_addGenresToMovies.designer.cs">
+      <DependentUpon>202004091257371_addGenresToMovies.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -273,6 +285,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\FormMovieViewModel.cs" />
     <Compile Include="ViewModels\MovieCustomerViewModel.cs" />
     <Compile Include="ViewModels\FormCustomerViewModel.cs" />
   </ItemGroup>
@@ -416,8 +429,17 @@
     <EmbeddedResource Include="Migrations\202004091122141_delete_old_genre.resx">
       <DependentUpon>202004091122141_delete_old_genre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004091124161_add_new_genre.resx">
-      <DependentUpon>202004091124161_add_new_genre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004091201064_addGenre.resx">
+      <DependentUpon>202004091201064_addGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091204043_addGenre1.resx">
+      <DependentUpon>202004091204043_addGenre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091244486_feedGenre.resx">
+      <DependentUpon>202004091244486_feedGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091257371_addGenresToMovies.resx">
+      <DependentUpon>202004091257371_addGenresToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
