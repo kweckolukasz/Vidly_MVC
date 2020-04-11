@@ -33,6 +33,7 @@
     
 
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
         }
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
