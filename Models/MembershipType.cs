@@ -12,5 +12,11 @@ namespace Vidly.Models
         public byte DurationInMonth { get; set; }
         public byte DiscountRate { get; set; }
         public string Name { get; set; }
+
+        public static readonly byte UnAssigned = 0;
+        public static readonly byte PayAsYouGo = 1;
+        public static readonly byte Monthly = 1;
+        public static readonly byte Quarterly = 1;
+        public static readonly byte Annual = 1;
     }
 }

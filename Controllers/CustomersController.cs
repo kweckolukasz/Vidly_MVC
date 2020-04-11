@@ -43,6 +43,7 @@ namespace Vidly.Controllers
 
         public ActionResult newCustomer()
         {
+            ViewBag.Heading = "New Customer";
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new FormCustomerViewModel()
             {
@@ -54,6 +55,7 @@ namespace Vidly.Controllers
 
         public ActionResult EditCustomer(int id)
         {
+            ViewBag.Heading = "Edit Customer";
             var ViewModel = new FormCustomerViewModel();
             var MemberShipTypes = _context.MembershipTypes.ToList();
             var Customer = _context.Customers.FirstOrDefault(c => c.Id == id);
@@ -84,15 +86,10 @@ namespace Vidly.Controllers
             else
             {
                 var CustomerInDB = _context.Customers.Single(c => c.Id == customer.Id);
-                /*var config = new MapperConfiguration(cfg => cfg.CreateMap<Customer, Customer>());
-                IMapper mapper = config.CreateMapper();
-                customerInDB = mapper.Map<Customer, Customer>(customer);*/
                 CustomerInDB.name = customer.name;
                 CustomerInDB.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
                 CustomerInDB.membershipTypeId = customer.membershipTypeId;
                 CustomerInDB.dateOfBirth = customer.dateOfBirth;
-
-                //TryUpdateModel(CustomerInDB);
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
