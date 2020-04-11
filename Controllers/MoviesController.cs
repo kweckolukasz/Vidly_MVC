@@ -38,11 +38,13 @@ namespace Vidly.Controllers
             {
                 Genres = _context.Genres.ToList()
             };
+            ViewBag.Header = "Add a movie";
             return View("Form", viewModel);
         }
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Header = "Edit Movie";
             Movie movie = _context.Movies
                 .Include(m => m.Genre)
                 .First(m => id == m.Id);
@@ -60,6 +62,7 @@ namespace Vidly.Controllers
 
             return View("Form", viewModel);
         }
+        [HttpPost]
         public ActionResult Save(Movie movie)
         {
             if (movie == null)

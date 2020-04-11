@@ -12,7 +12,9 @@ namespace Vidly.Models
         public int Id { get; set; }
         [Display(Name = "Title")]
         public string Name { get; set; }
+        [Display(Name="Genre")]
         public Genre Genre { get; set; }
+        [Display(Name = "Genre")]
         public int GenreId { get; set; }
         [Display(Name = "Release Date")]
         [Column(TypeName = "DateTime2")]
