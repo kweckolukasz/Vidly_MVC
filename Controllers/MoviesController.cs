@@ -36,6 +36,7 @@ namespace Vidly.Controllers
         {
             FormMovieViewModel viewModel = new FormMovieViewModel
             {
+                Movie = new Movie(),
                 Genres = _context.Genres.ToList()
             };
             ViewBag.Header = "Add a movie";
@@ -62,17 +63,27 @@ namespace Vidly.Controllers
 
             return View("Form", viewModel);
         }
+        
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
+            movie.DateAdded = DateTime.Now;
+            movie.NumberInStock = movie.Id;
             if (movie == null)
             {
                 return HttpNotFound();
             }
-
-
-            movie.DateAdded = DateTime.Now;
-            movie.NumberInStock = movie.Id;
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Header = "correct your Form";
+                var Genres = _context.Genres.ToList();
+                FormMovieViewModel viewModel = new FormMovieViewModel
+                {
+                    Movie = movie,
+                    Genres = Genres
+                };
+                return View("Form",viewModel);
+            }
 
             if (movie.Id == 0)
             {
