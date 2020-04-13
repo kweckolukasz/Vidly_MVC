@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vidly.Models.Customer>
+﻿@model IEnumerable<Vidly.DTO.CustomerDTO>
 @{
     ViewBag.Title = "Customers";
 }
@@ -13,17 +13,15 @@
             <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Discount Rate</th>
             </tr>
         </thead>
         <tbody>
 
-            @foreach (var customer in Model)
+            @foreach (var customerDto in Model)
             {
                 <tr>
-                    <th scope="row">@customer.Id</th>
-                    <td>@Html.ActionLink(customer.name, "EditCustomer", "Customers", new { id = customer.Id }, null)</td>
-                    <td>@customer.membershipType.DiscountRate%</td>
+                    <th scope="row">@customerDto.Id</th>
+                    <td>@Html.ActionLink(customerDto.name, "EditCustomer", "Customers", new { id = customerDto.Id }, null)</td>
                 </tr>
             }
         </tbody>

@@ -7,6 +7,7 @@ using System.Data.Entity;
 using Vidly.ViewModels;
 using Vidly.Models;
 using AutoMapper;
+using Vidly.DTO;
 
 namespace Vidly.Controllers
 {
@@ -28,7 +29,8 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.membershipType).ToList();
-            return View(customers);
+            var customersDtos = Mapper.Map<List<Customer>, List<CustomerDTO>>(customers);
+            return View(customersDtos);
         }
 
         public ActionResult CustomerDetail(int id)
@@ -38,7 +40,8 @@ namespace Vidly.Controllers
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            var customerDto = Mapper.Map<Customer, CustomerDTO>(customer);
+            return View(customerDto);
         }
 
         public ActionResult newCustomer()
@@ -47,7 +50,7 @@ namespace Vidly.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new FormCustomerViewModel()
             {
-                Customer = new Customer(),
+                CustomerDto = new CustomerDTO(),
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm",viewModel);
@@ -59,16 +62,16 @@ namespace Vidly.Controllers
             var ViewModel = new FormCustomerViewModel();
             var MemberShipTypes = _context.MembershipTypes.ToList();
             var Customer = _context.Customers.FirstOrDefault(c => c.Id == id);
-            ViewModel.Customer = Customer;
+            ViewModel.CustomerDto = Mapper.Map<Customer, CustomerDTO>(Customer);
             ViewModel.MembershipTypes = MemberShipTypes;
             return View("CustomerForm", ViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Customer customer)
+        public ActionResult Save(CustomerDTO customerDto)
         {
-            if (customer == null)
+            if (customerDto == null)
             {
                 return HttpNotFound();
             }
@@ -76,21 +79,18 @@ namespace Vidly.Controllers
             {
                 var ViewModel = new FormCustomerViewModel
                 {
-                    Customer = new Customer(),
+                    CustomerDto = new CustomerDTO(),
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
                 return View("CustomerForm", ViewModel);
                
             }
-            if (customer.Id == 0)
-                _context.Customers.Add(customer);
+            if (customerDto.Id == 0)
+                _context.Customers.Add(Mapper.Map<CustomerDTO, Customer>(customerDto));
             else
             {
-                var CustomerInDB = _context.Customers.Single(c => c.Id == customer.Id);
-                CustomerInDB.name = customer.name;
-                CustomerInDB.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
-                CustomerInDB.membershipTypeId = customer.membershipTypeId;
-                CustomerInDB.dateOfBirth = customer.dateOfBirth;
+                var CustomerInDB = _context.Customers.Single(c => c.Id == customerDto.Id);
+                Mapper.Map(customerDto, CustomerInDB);
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
