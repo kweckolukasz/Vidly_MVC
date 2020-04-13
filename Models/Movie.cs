@@ -29,7 +29,7 @@ namespace Vidly.Models
         public DateTime DateAdded { get; set; }
         [Display(Name = "Stock no.")]
         [Required]
-        //[NumberInStockMustBe1_20]
+        [Range(1,20)]
         public int NumberInStock { get; set; }
     }
 }

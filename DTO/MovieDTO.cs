@@ -18,11 +18,9 @@ namespace Vidly.DTO
         public int GenreId { get; set; }
 
         [Column(TypeName = "DateTime2")]
-        [Required]
         public DateTime ReleaseDate { get; set; }
 
-        [Required]
-        //[NumberInStockMustBe1_20]
+        [Range(1,20)]
         public int NumberInStock { get; set; }
     }
 }
