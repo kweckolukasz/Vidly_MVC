@@ -14,7 +14,10 @@ namespace Vidly.DTO
         [StringLength(255)]
         public string name { get; set; }
         public bool IsSubscribedToNewsLetter { get; set; }
-        public byte membershipTypeId { get; set; }
+        public byte MembershipTypeId { get; set; }
+
+        public string MembershiptypeName { get; set; }
+
         [Required]
         //[Minimum18YrsOld]
         public DateTime dateOfBirth { get; set; }

@@ -28,14 +28,14 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.membershipType).ToList();
+            var customers = _context.Customers.Include(c => c.Membershiptype).ToList();
             var customersDtos = Mapper.Map<List<Customer>, List<CustomerDTO>>(customers);
             return View(customersDtos);
         }
-
-        public ActionResult CustomerDetail(int id)
+        [Route("Customers/{id}")]
+        public ActionResult GetCustomer(int id)
         {
-            var customer = _context.Customers.Include(c => c.membershipType).SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.Include(c => c.Membershiptype).SingleOrDefault(c => c.Id == id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -65,6 +65,7 @@ namespace Vidly.Controllers
             ViewModel.CustomerDto = Mapper.Map<Customer, CustomerDTO>(Customer);
             ViewModel.MembershipTypes = MemberShipTypes;
             return View("CustomerForm", ViewModel);
+           
         }
 
         [HttpPost]

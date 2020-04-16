@@ -41,7 +41,7 @@ namespace Vidly.Controllers.API
             return Created(new Uri(Request.RequestUri+"/"+customer.Id.ToString()), customerDto);
         }
         //GET /api/Customers/1
-        public IHttpActionResult ReadCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             Customer customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 

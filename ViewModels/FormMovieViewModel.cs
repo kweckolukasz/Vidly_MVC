@@ -30,7 +30,6 @@ namespace Vidly.ViewModels
         
         [Display(Name = "Stock no.")]
         [Required]
-        [NumberInStockMustBe1_20]
         public int? NumberInStock { get; set; }
 
         public string title { 
