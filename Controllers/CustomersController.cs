@@ -25,14 +25,13 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
+        [Route("Customers")]
         [Route("Customers/Index")]
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.Membershiptype).ToList();
-            var customersDtos = Mapper.Map<List<Customer>, List<CustomerDTO>>(customers);
-            return View(customersDtos);
+            return View();
         }
-        [Route("Customers/{id}")]
+        
         public ActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.Include(c => c.Membershiptype).SingleOrDefault(c => c.Id == id);
