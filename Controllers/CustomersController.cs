@@ -25,7 +25,7 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
-
+        [Route("Customers/Index")]
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.Membershiptype).ToList();
