@@ -29,9 +29,10 @@ namespace Vidly.Controllers.API
                 .Include(c => c.Membershiptype)
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDTO>);
+                
         }
 
-
+        // TODO: Customer should be saved with MembershipType
         //POST /api/Customers/customer
         [HttpPost]
         public IHttpActionResult CreateCustomer(CustomerDTO customerDto)
@@ -48,7 +49,10 @@ namespace Vidly.Controllers.API
         //GET /api/Customers/1
         public IHttpActionResult GetCustomer(int id)
         {
-            Customer customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            Customer customer = _context
+                .Customers
+                .Include(c => c.Membershiptype)
+                .SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
             {
