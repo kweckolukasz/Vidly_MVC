@@ -32,7 +32,6 @@ namespace Vidly.Controllers.API
                 
         }
 
-        // TODO: Customer should be saved with MembershipType
         //POST /api/Customers/customer
         [HttpPost]
         public IHttpActionResult CreateCustomer(CustomerDTO customerDto)
@@ -58,7 +57,8 @@ namespace Vidly.Controllers.API
             {
                 return NotFound();
             }
-            return Ok(Mapper.Map<Customer, CustomerDTO>(customer));
+            var customerDto = Mapper.Map<Customer, CustomerDTO>(customer);
+            return Ok(customerDto);
         }
 
         //PUT /api/Customers/1

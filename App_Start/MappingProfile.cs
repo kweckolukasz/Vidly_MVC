@@ -13,8 +13,7 @@ namespace Vidly.App_Start
         public MappingProfile()
         {
             // Domain -> Dto
-            Mapper.CreateMap<Customer, CustomerDTO>()
-                .Include(src => src.MembershipType);
+            Mapper.CreateMap<Customer, CustomerDTO>();
             Mapper.CreateMap<Movie, MovieDTO>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
             // Dto -> Domain
