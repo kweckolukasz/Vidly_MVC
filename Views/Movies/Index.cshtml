@@ -1,42 +1,70 @@
-﻿@model IEnumerable<Vidly.Models.Movie>
+﻿@model IEnumerable<Vidly.DTO.MovieDTO>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-    @{var movies = Model.ToList(); }
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Genre</th>
-                <th>release date</th>
-                <th>date added</th>
-                <th>number in stock</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @{int i = 1;}
+@*@{var movies = Model.ToList(); }*@
+<table id="movies" class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>release date</th>
+            <th>number in stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*@{int i = 1;}
 
             @foreach (var movie in movies)
             {
-               
+
                 <tr>
                     <th scope="row">@i</th>
                     <td>@Html.ActionLink(movie.Name, "Edit", "Movies",new { id = movie.Id }, null)</td>
                     <td>@movie.Genre.Name</td>
                     <td>@movie.ReleaseDate.ToString("dd/MM/yyyy")</td>
-                    <td>@movie.DateAdded.ToString("dd/MM/yyyy")</td>
                     <td>@movie.NumberInStock</td>
                 </tr>
                 i++;
-            }
-
-        </tbody>
-    </table>
+            }*@
+    </tbody>
+</table>
 @Html.ActionLink("add a Movie", "Add", null, new { @class = "btn btn-primary btn-block" })
+@section scripts{
+    <script>
+        $(document)
+            .ready(
+                function () {
+                    $("#movies")
+                        .DataTable({
+                            ajax: {
+                                url: "/API/Movies",
+                                dataSrc: ""
+                            },
+                            columns: [
+                                {
+                                    data: "name",
+                                    render: function (data, type, movie) {
+                                        return "<a href='/movies/edit/" + movie.id + "'>" + movie.name + "</a>"
+                                    }
 
-
+                                },
+                                {
+                                    data: "genre.name"
+                                },
+                                {
+                                    data: "releaseDate"
+                                },
+                                {
+                                    data: "numberInStock"
+                                }
+                            ]
+                            
+                        });
+                }
+            );
+    </script>
+    }
