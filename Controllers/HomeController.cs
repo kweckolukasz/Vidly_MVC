@@ -8,6 +8,7 @@ using Vidly.Models;
 
 namespace Vidly.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
 

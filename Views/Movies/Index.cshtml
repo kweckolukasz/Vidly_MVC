@@ -3,35 +3,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-@*@{var movies = Model.ToList(); }*@
-<table id="movies" class="table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Genre</th>
-            <th>release date</th>
-            <th>number in stock</th>
-        </tr>
-    </thead>
-    <tbody>
-        @*@{int i = 1;}
-
-            @foreach (var movie in movies)
-            {
-
+        <table id="movies" class="table">
+            <thead>
                 <tr>
-                    <th scope="row">@i</th>
-                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies",new { id = movie.Id }, null)</td>
-                    <td>@movie.Genre.Name</td>
-                    <td>@movie.ReleaseDate.ToString("dd/MM/yyyy")</td>
-                    <td>@movie.NumberInStock</td>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>release date</th>
+                    <th>number in stock</th>
                 </tr>
-                i++;
-            }*@
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 @Html.ActionLink("add a Movie", "Add", null, new { @class = "btn btn-primary btn-block" })
 @section scripts{
     <script>

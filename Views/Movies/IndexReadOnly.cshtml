@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Vidly.DTO.MovieDTO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="movies" class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@section scripts{
+    <script>
+        $(document)
+            .ready(
+                function () {
+                    $("#movies")
+                        .DataTable({
+                            ajax: {
+                                url: "/API/Movies",
+                                dataSrc: ""
+                            },
+                            columns: [
+                                {
+                                    data: "name"
+                                },
+                                {
+                                    data: "genre.name"
+                                }
+                            ]
+                            
+                        });
+                }
+            );
+    </script>
+    }
