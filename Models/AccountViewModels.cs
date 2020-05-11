@@ -3,12 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Vidly.Models
 {
-    public class ExternalLoginConfirmationViewModel
-    {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-    }
 
     public class ExternalLoginListViewModel
     {
@@ -65,12 +59,17 @@ namespace Vidly.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(50)]
+        [Display(Name = "Phone Number")]
+        public string CellPhoneNumber { get; set; }
+        [Required]
         [Display(Name ="Your Favourite Color")]
         public string MyFavouriteColour { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
