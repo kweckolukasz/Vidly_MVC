@@ -302,6 +302,18 @@
     <Compile Include="Migrations\202005111300525_update.designer.cs">
       <DependentUpon>202005111300525_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005111934302_deleteUsers.cs" />
+    <Compile Include="Migrations\202005111934302_deleteUsers.designer.cs">
+      <DependentUpon>202005111934302_deleteUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005111940055_cleanUpAfterDelete.cs" />
+    <Compile Include="Migrations\202005111940055_cleanUpAfterDelete.designer.cs">
+      <DependentUpon>202005111940055_cleanUpAfterDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005111950533_givePermisionToAdmin.cs" />
+    <Compile Include="Migrations\202005111950533_givePermisionToAdmin.designer.cs">
+      <DependentUpon>202005111950533_givePermisionToAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -659,6 +671,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005111300525_update.resx">
       <DependentUpon>202005111300525_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005111934302_deleteUsers.resx">
+      <DependentUpon>202005111934302_deleteUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005111940055_cleanUpAfterDelete.resx">
+      <DependentUpon>202005111940055_cleanUpAfterDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005111950533_givePermisionToAdmin.resx">
+      <DependentUpon>202005111950533_givePermisionToAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
