@@ -8,7 +8,7 @@ using Vidly.Models;
 
 namespace Vidly.DTO
 {
-    public class MovieDTO
+    public class MovieDto
     {
         public int Id { get; set; }
         [Required]
@@ -22,5 +22,6 @@ namespace Vidly.DTO
 
         [Range(1,20)]
         public int NumberInStock { get; set; }
+        public int avaibleCopies { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using Vidly.DTO;
 
 namespace Vidly.DTO
 {
-    public class CustomerDTO
+    public class CustomerDto
     {
         public int Id { get; set; }
         [Required]
