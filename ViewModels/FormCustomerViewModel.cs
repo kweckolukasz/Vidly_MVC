@@ -10,6 +10,6 @@ namespace Vidly.ViewModels
     public class FormCustomerViewModel
     {
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
-        public CustomerDTO CustomerDto { get; set; }
+        public CustomerDto CustomerDto { get; set; }
     }
 }

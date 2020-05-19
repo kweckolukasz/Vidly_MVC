@@ -22,25 +22,25 @@ namespace Vidly.Controllers.API
 
 
         //GET /api/Customers
-        public IEnumerable<CustomerDTO> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
         {
             return _context
                 .Customers
                 .Include(c => c.Membershiptype)
                 .ToList()
-                .Select(Mapper.Map<Customer, CustomerDTO>);
+                .Select(Mapper.Map<Customer, CustomerDto>);
                 
         }
 
         //POST /api/Customers/customer
         [HttpPost]
-        public IHttpActionResult CreateCustomer(CustomerDTO customerDto)
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
-            var customer = Mapper.Map<CustomerDTO, Customer>(customerDto);
+            var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
             _context.SaveChanges();
             return Created(new Uri(Request.RequestUri+"/"+customer.Id.ToString()), customerDto);
@@ -57,13 +57,13 @@ namespace Vidly.Controllers.API
             {
                 return NotFound();
             }
-            var customerDto = Mapper.Map<Customer, CustomerDTO>(customer);
+            var customerDto = Mapper.Map<Customer, CustomerDto>(customer);
             return Ok(customerDto);
         }
 
         //PUT /api/Customers/1
         [HttpPut]
-        public void UpdateCustomer(int id, CustomerDTO customerDto)
+        public void UpdateCustomer(int id, CustomerDto customerDto)
         {
             Customer customerDB = _context.Customers.SingleOrDefault(c => c.Id == id);
             if (customerDB == null || customerDto == null)

@@ -39,7 +39,7 @@ namespace Vidly.Controllers
             {
                 return HttpNotFound();
             }
-            var customerDto = Mapper.Map<Customer, CustomerDTO>(customer);
+            var customerDto = Mapper.Map<Customer, CustomerDto>(customer);
             return View(customerDto);
         }
 
@@ -49,7 +49,7 @@ namespace Vidly.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new FormCustomerViewModel()
             {
-                CustomerDto = new CustomerDTO(),
+                CustomerDto = new CustomerDto(),
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm",viewModel);
@@ -61,7 +61,7 @@ namespace Vidly.Controllers
             var ViewModel = new FormCustomerViewModel();
             var MemberShipTypes = _context.MembershipTypes.ToList();
             var Customer = _context.Customers.FirstOrDefault(c => c.Id == id);
-            ViewModel.CustomerDto = Mapper.Map<Customer, CustomerDTO>(Customer);
+            ViewModel.CustomerDto = Mapper.Map<Customer, CustomerDto>(Customer);
             ViewModel.MembershipTypes = MemberShipTypes;
             return View("CustomerForm", ViewModel);
            
@@ -69,7 +69,7 @@ namespace Vidly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(CustomerDTO customerDto)
+        public ActionResult Save(CustomerDto customerDto)
         {
             if (customerDto == null)
             {
@@ -79,14 +79,14 @@ namespace Vidly.Controllers
             {
                 var ViewModel = new FormCustomerViewModel
                 {
-                    CustomerDto = new CustomerDTO(),
+                    CustomerDto = new CustomerDto(),
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
                 return View("CustomerForm", ViewModel);
                
             }
             if (customerDto.Id == 0)
-                _context.Customers.Add(Mapper.Map<CustomerDTO, Customer>(customerDto));
+                _context.Customers.Add(Mapper.Map<CustomerDto, Customer>(customerDto));
             else
             {
                 var CustomerInDB = _context.Customers.Single(c => c.Id == customerDto.Id);

@@ -31,5 +31,8 @@ namespace Vidly.Models
         [Required]
         [Range(1,20)]
         public int NumberInStock { get; set; }
+        [Display(Name = "Quantity")]
+        [Required]
+        public int AvaibleCopies { get; set; }
     }
 }
