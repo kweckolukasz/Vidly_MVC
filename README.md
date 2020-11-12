@@ -4,7 +4,6 @@
 ## Table of contents
 * [General info](#general-info)
 * [Structure](#structure)
-* [Features](#features)
 
 ## General info
 This was written to recap knowledge about programming with course 'The Complete ASP.NET MVC 5 Course' by Mosh Hamedani from www.udemy.com
